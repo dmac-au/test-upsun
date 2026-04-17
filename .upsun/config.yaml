@@ -2,7 +2,7 @@
 # AI can make mistakes. Please modify this file to suit your needs.
 applications:
   app:
-    type: python:3.14
+    type: python:3.13
     dependencies:
       python3:
         uv: '*'
