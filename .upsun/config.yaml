@@ -1,0 +1,23 @@
+# Upsun configuration, generated using AI at: 2026-04-17T10:14:49+09:30
+# AI can make mistakes. Please modify this file to suit your needs.
+applications:
+  app:
+    type: python:3.13
+    dependencies:
+      python3:
+        uv: '*'
+    hooks:
+      build: |
+        set -ex
+        uv sync --frozen --no-dev --no-managed-python
+        # Export DATABASE_URL for database connectivity if needed
+        echo >> .environment 'export DATABASE_URL="$DB_SCHEME://$DB_USERNAME:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_PATH"'
+    web:
+      commands:
+        start: uv run python main.py
+
+# Single application, so default route to it
+routes:
+  https://{default}/:
+    type: upstream
+    upstream: app:http
