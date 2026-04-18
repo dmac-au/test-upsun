@@ -14,7 +14,7 @@ applications:
         echo >> .environment 'export DATABASE_URL="$DB_SCHEME://$DB_USERNAME:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_PATH"'
     web:
       commands:
-        start: uv run python main.py
+        start: uv run fastapi run
 
 # Single application, so default route to it
 routes:
