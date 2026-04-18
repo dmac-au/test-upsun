@@ -17,9 +17,9 @@ applications:
     web:
       commands:
         start: uv run fastapi run
-  services:
-    db:
-      type: postgresql:18
+services:
+  db:
+    type: postgresql:18
 
 # Single application, so default route to it
 routes:
