@@ -27,10 +27,7 @@ async def root():
 async def get_books():
     with Session(engine) as session:
         books = session.query(DbBook).all()
-        return [
-            {"id": book.id, "title": book.title, "author": book.author}
-            for book in books
-        ]
+        return [{"id": book.id, "title": book.title, "author": book.author} for book in books]
 
 
 @app.post(f"{api_path}/books")
