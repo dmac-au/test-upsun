@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# upsun dump files
+*--dump.sql
