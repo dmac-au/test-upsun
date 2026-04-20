@@ -6,7 +6,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: astral-sh/ruff-action@v3
-    - name: Check files
-      run: |
-        ruff check
-        ruff format
+      with:
+        args: "check --fix"
+    - uses: astral-sh/ruff-action@v3
+      with:
+        args: "format --check --diff"
