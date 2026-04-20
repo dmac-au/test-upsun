@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from pydantic import BaseModel
 
 
@@ -6,7 +6,7 @@ class Book(BaseModel):
     id: int | None = None
     title: str
     author_id: int | None = None
-    author: Author | None = None
+    author: Optional["Author"] = None
 
 
 class Author(BaseModel):
