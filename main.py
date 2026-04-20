@@ -1,12 +1,12 @@
+import logging
 from typing import List
-from sqlalchemy import select
+
 from fastapi import FastAPI
 from sqlalchemy.orm import Session
-import logging
 
 from db import engine
-from db.models import DbAuthor, DbBook
-from schema import Book, Author
+from db.models import DbBook
+from schema import Book
 
 app = FastAPI()
 
